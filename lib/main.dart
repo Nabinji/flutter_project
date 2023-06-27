@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_project/switch_button.dart';
 // import 'package:my_project/radio_button.dart';
 
-import 'check_box.dart';
+// import 'check_box.dart';
 // import 'image_slider.dart';
 // import 'new_calender.dart';
 
@@ -16,10 +17,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:
-          // ImageSliders(),
-          //  NepaliCalendar
-          CheckBox(),
+      home: SwitchButton(),
+      // ImageSliders(),
+      //  NepaliCalendar
+      // CheckBox(),
       // RadioButton(),
     );
   }
