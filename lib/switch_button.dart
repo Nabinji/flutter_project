@@ -24,7 +24,7 @@ class _SwitchButtonState extends State<SwitchButton> {
                 title: index.toString(),
               );
             }),
-      ),
+      ), 
     );
   }
 }

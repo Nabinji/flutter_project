@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/switch_button.dart';
+// import 'package:my_project/switch_button.dart';
+import 'package:my_project/table.dart';
 // import 'package:my_project/radio_button.dart';
 
 // import 'check_box.dart';
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SwitchButton(),
+      home: TableInFlutter(),
+      // SwitchButton(),
       // ImageSliders(),
       //  NepaliCalendar
       // CheckBox(),
