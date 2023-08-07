@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/TapBar/tab_bar.dart';
+import 'package:my_project/Dialog%20box/alert_box.dart';
+// import 'package:my_project/TapBar/tab_bar.dart';
+
 // import 'package:my_project/switch_button.dart';
 // import 'package:my_project/table.dart';
 // import 'package:my_project/radio_button.dart';
@@ -17,15 +19,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: MyTabBar()
-
-        // HoriontalVerticleScrolling(),
-        // TableInFlutter(),
-        // SwitchButton(),
-        // ImageSliders(),
-        //  NepaliCalendar
-        // CheckBox(),
-        // RadioButton(),
-        );
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false, home: AlertBox(),
+      //  MyTabBar()
+      // HoriontalVerticleScrolling(),
+      // TableInFlutter(),
+      // SwitchButton(),
+      // ImageSliders(),
+      //  NepaliCalendar
+      // CheckBox(),
+      // RadioButton(),
+    );
   }
 }
