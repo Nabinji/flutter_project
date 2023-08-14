@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 // import 'package:my_project/Dialog%20box/alert_box.dart';
 // import 'package:my_project/TapBar/tab_bar.dart';
 // import 'package:my_project/switch_button.dart';
@@ -9,7 +8,9 @@ import 'package:flutter/material.dart';
 // import 'new_calender.dart';
 // import 'hoirzontal_vertical.dart';
 // import 'package:my_project/snackBar.dart';
-import 'package:my_project/page_view.dart';
+// import 'package:my_project/page_view.dart';
+import 'package:flutter/material.dart';
+import 'package:my_project/neumorphism.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,19 +22,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: PageViewWidget(),
-      //  ShowSnackBar(),
+        debugShowCheckedModeBanner: false, home: NeumorphismPage()
+        // PageViewWidget(),
+        //  ShowSnackBar(),
 
-      // AlertBox(),
-      //  MyTabBar()
-      // HoriontalVerticleScrolling(),
-      // TableInFlutter(),
-      // SwitchButton(),
-      // ImageSliders(),
-      //  NepaliCalendar
-      // CheckBox(),
-      // RadioButton(),
-    );
+        // AlertBox(),
+        //  MyTabBar()
+        // HoriontalVerticleScrolling(),
+        // TableInFlutter(),
+        // SwitchButton(),
+        // ImageSliders(),
+        //  NepaliCalendar
+        // CheckBox(),
+        // RadioButton(),
+        );
   }
 }
