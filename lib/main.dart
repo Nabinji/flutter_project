@@ -10,8 +10,9 @@
 // import 'package:my_project/snackBar.dart';
 // import 'package:my_project/page_view.dart';
 // import 'package:my_project/neumorphism.dart';
+// import 'package:my_project/expansion_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:my_project/expansion_tile.dart';
+import 'package:my_project/stepper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyExpansionTile(),
+      home: MyStepper(),
     );
   }
 }
