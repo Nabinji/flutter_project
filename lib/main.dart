@@ -1,18 +1,5 @@
-// import 'package:my_project/Dialog%20box/alert_box.dart';
-// import 'package:my_project/TapBar/tab_bar.dart';
-// import 'package:my_project/switch_button.dart';
-// import 'package:my_project/table.dart';
-// import 'package:my_project/radio_button.dart';
-// import 'check_box.dart';
-// import 'image_slider.dart';
-// import 'new_calender.dart';
-// import 'hoirzontal_vertical.dart';
-// import 'package:my_project/snackBar.dart';
-// import 'package:my_project/page_view.dart';
-// import 'package:my_project/neumorphism.dart';
-// import 'package:my_project/expansion_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:my_project/fitted_box.dart';
+import 'package:my_project/read_more_less.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyFittedBox(),
+      home: ReadMoreLess(),
     );
   }
 }

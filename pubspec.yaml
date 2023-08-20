@@ -37,6 +37,7 @@ dependencies:
   flutter_bs_ad_calendar: ^1.0.2
   another_carousel_pro: ^1.0.0
   font_awesome_flutter: ^10.5.0
+  readmore: ^2.2.0
 
 dev_dependencies:
   flutter_test:
