@@ -38,6 +38,7 @@ dependencies:
   another_carousel_pro: ^1.0.0
   font_awesome_flutter: ^10.5.0
   readmore: ^2.2.0
+  flutter_slidable: ^3.0.0
 
 dev_dependencies:
   flutter_test:
