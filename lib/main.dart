@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/Date%20and%20Time/time_picker.dart';
+import 'package:my_project/bottom_navigation_bar/bottom_nav_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +11,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyTimePicker(),
-    );
+        debugShowCheckedModeBanner: false, home: MyButtomNavBar());
   }
 }
