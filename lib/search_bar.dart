@@ -1,77 +1,105 @@
 import 'package:flutter/material.dart';
 
-class SearchableListScreen extends StatefulWidget {
-  @override
-  _SearchableListScreenState createState() => _SearchableListScreenState();
+void main() {
+  runApp(SearchBarApp());
 }
 
-class _SearchableListScreenState extends State<SearchableListScreen> {
+class SearchBarApp extends StatefulWidget {
+  const SearchBarApp({super.key});
+
+  @override
+  State<SearchBarApp> createState() => _SearchBarAppState();
+}
+
+class _SearchBarAppState extends State<SearchBarApp> {
+  final TextEditingController _searchController = TextEditingController();
+  String searchText = '';
+  bool isSearchClicked = false;
+
   List<String> items = [
-    "Item 1",
-    "Item 2",
-    "Item 3",
-    "Item 4",
-    "Item 5",
+    'Item 1',
+    'Messi',
+    'Ronaldo',
+    'Virat Kohli',
+    '2',
+    'Rock',
+    'Elon Musk'
   ];
 
   List<String> filteredItems = [];
 
-  TextEditingController searchController = TextEditingController();
-
   @override
   void initState() {
     super.initState();
-    filteredItems.addAll(items);
-    searchController.addListener(filterItems);
+    filteredItems = List.from(items);
   }
 
-  void filterItems() {
-    final query = searchController.text;
-    List<String> filtered = items
-        .where((item) => item.toLowerCase().contains(query.toLowerCase()))
-        .toList();
-
+  void _onSearchChanged(String value) {
     setState(() {
-      filteredItems.clear();
-      filteredItems.addAll(filtered);
+      searchText = value;
+      filterItems();
     });
   }
 
-  @override
-  void dispose() {
-    searchController.dispose();
-    super.dispose();
+  void filterItems() {
+    if (searchText.isEmpty) {
+      filteredItems = List.from(items);
+    } else {
+      filteredItems = items
+          .where(
+              (item) => item.toLowerCase().contains(searchText.toLowerCase()))
+          .toList();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Searchable List'),
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextField(
-              controller: searchController,
-              decoration: const InputDecoration(
-                labelText: 'Search',
-                prefixIcon: Icon(Icons.search),
-              ),
-            ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: filteredItems.length,
-              itemBuilder: (BuildContext context, int index) {
-                return ListTile(
-                  title: Text(filteredItems[index]),
-                );
-              },
-            ),
-          ),
+        backgroundColor: Colors.blue,
+        title: isSearchClicked
+            ? Container(
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: TextField(
+                  controller: _searchController,
+                  onChanged: _onSearchChanged,
+                  decoration: const InputDecoration(
+                    contentPadding: EdgeInsets.fromLTRB(16, 20, 16, 12),
+                    hintStyle: TextStyle(color: Colors.black),
+                    border: InputBorder.none,
+                    hintText: 'Search..',
+                  ),
+                ),
+              )
+            : const Text('Search Bar'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              setState(() {
+                isSearchClicked = !isSearchClicked;
+                if (!isSearchClicked) {
+                  // If the user closes the search bar, reset the filter
+                  _searchController.clear();
+                  filterItems();
+                }
+              });
+            },
+            icon: Icon(isSearchClicked ? Icons.close : Icons.search),
+          )
         ],
+      ),
+      body: ListView.builder(
+        itemCount: filteredItems.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(filteredItems[index]),
+          );
+        },
       ),
     );
   }
