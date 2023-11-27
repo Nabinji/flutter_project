@@ -22,6 +22,7 @@ class _MyButtomNavBarState extends State<MyButtomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Bottom Navigation Bar"),
@@ -37,7 +38,7 @@ class _MyButtomNavBarState extends State<MyButtomNavBar> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30),
           child: BottomNavigationBar(
-              backgroundColor: Colors.white,
+              // backgroundColor: Colors.transparent,
               selectedItemColor: Colors.redAccent,
               unselectedItemColor: Colors.black,
               currentIndex: myCurrentIndex,

@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(SearchBarApp());
-}
-
 class SearchBarApp extends StatefulWidget {
   const SearchBarApp({super.key});
 
@@ -13,21 +9,19 @@ class SearchBarApp extends StatefulWidget {
 
 class _SearchBarAppState extends State<SearchBarApp> {
   final TextEditingController _searchController = TextEditingController();
-  String searchText = '';
   bool isSearchClicked = false;
-
+  String searchText = '';
   List<String> items = [
-    'Item 1',
+    'Items 1',
     'Messi',
     'Ronaldo',
     'Virat Kohli',
     '2',
     'Rock',
-    'Elon Musk'
+    'Elon Musk',
   ];
 
   List<String> filteredItems = [];
-
   @override
   void initState() {
     super.initState();
@@ -37,11 +31,11 @@ class _SearchBarAppState extends State<SearchBarApp> {
   void _onSearchChanged(String value) {
     setState(() {
       searchText = value;
-      filterItems();
+      myFilterItems();
     });
   }
 
-  void filterItems() {
+  void myFilterItems() {
     if (searchText.isEmpty) {
       filteredItems = List.from(items);
     } else {
@@ -56,36 +50,35 @@ class _SearchBarAppState extends State<SearchBarApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        centerTitle: true,
+        /* if the search button is clickable then show
+         the container otherwise text "Search Bar"*/
         title: isSearchClicked
             ? Container(
                 height: 40,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(20),
                 ),
                 child: TextField(
                   controller: _searchController,
                   onChanged: _onSearchChanged,
                   decoration: const InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(16, 20, 16, 12),
-                    hintStyle: TextStyle(color: Colors.black),
-                    border: InputBorder.none,
-                    hintText: 'Search..',
-                  ),
+                      contentPadding: EdgeInsets.fromLTRB(16, 20, 16, 12),
+                      hintStyle: TextStyle(color: Colors.black),
+                      border: InputBorder.none,
+                      hintText: 'Search..'),
                 ),
               )
-            : const Text('Search Bar'),
-        centerTitle: true,
+            : const Text("Search Bar"),
         actions: [
           IconButton(
             onPressed: () {
               setState(() {
                 isSearchClicked = !isSearchClicked;
                 if (!isSearchClicked) {
-                  // If the user closes the search bar, reset the filter
                   _searchController.clear();
-                  filterItems();
+                  myFilterItems();
                 }
               });
             },
@@ -93,14 +86,14 @@ class _SearchBarAppState extends State<SearchBarApp> {
           )
         ],
       ),
+      // body parts
       body: ListView.builder(
-        itemCount: filteredItems.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(filteredItems[index]),
-          );
-        },
-      ),
+          itemCount: filteredItems.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(filteredItems[index]),
+            );
+          }),
     );
   }
 }

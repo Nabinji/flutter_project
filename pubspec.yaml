@@ -40,6 +40,7 @@ dependencies:
   readmore: ^2.2.0
   flutter_slidable: ^3.0.0
   image_picker: ^1.0.4
+  lottie: ^2.7.0
 
 dev_dependencies:
   flutter_test:
