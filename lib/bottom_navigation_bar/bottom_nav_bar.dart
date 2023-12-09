@@ -4,14 +4,14 @@ import 'package:my_project/bottom_navigation_bar/home.dart';
 import 'package:my_project/bottom_navigation_bar/profile.dart';
 import 'package:my_project/bottom_navigation_bar/setting.dart';
 
-class MyButtomNavBar extends StatefulWidget {
-  const MyButtomNavBar({super.key});
+class MyBottomNavBar extends StatefulWidget {
+  const MyBottomNavBar({super.key});
 
   @override
-  State<MyButtomNavBar> createState() => _MyButtomNavBarState();
+  State<MyBottomNavBar> createState() => _MyButtomNavBarState();
 }
 
-class _MyButtomNavBarState extends State<MyButtomNavBar> {
+class _MyButtomNavBarState extends State<MyBottomNavBar> {
   int myCurrentIndex = 0;
   List pages = const [
     HomePage(),

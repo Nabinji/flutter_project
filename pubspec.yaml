@@ -41,6 +41,8 @@ dependencies:
   flutter_slidable: ^3.0.0
   image_picker: ^1.0.4
   lottie: ^2.7.0
+  share_plus: ^7.2.1
+  google_nav_bar: ^5.0.6
 
 dev_dependencies:
   flutter_test:

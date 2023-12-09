@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/bottom_navigation_bar/bottom_nav_bar.dart';
-import 'package:my_project/splash_screen.dart';
+import 'package:my_project/Modern%20Bottom%20Navigation/moder_bottom_naav_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyButtomNavBar(),
+      home: ModernBottomNavBar(),
     );
   }
 }
