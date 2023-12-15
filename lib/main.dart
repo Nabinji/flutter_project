@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/Modern%20Bottom%20Navigation/moder_bottom_naav_bar.dart';
+import 'package:my_project/On_Boarding/home_screen.dart';
+import 'package:my_project/On_Boarding/on_boarding_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+bool isShow = true;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final pref = await SharedPreferences.getInstance();
+  isShow = pref.getBool('ON_BOARDING') ?? true;
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ModernBottomNavBar(),
-    );
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: isShow ? const OnBoardingScreen() : const HomeScreen());
   }
 }

@@ -43,6 +43,8 @@ dependencies:
   lottie: ^2.7.0
   share_plus: ^7.2.1
   google_nav_bar: ^5.0.6
+  shared_preferences: ^2.2.2
+  introduction_screen: ^3.1.12
 
 dev_dependencies:
   flutter_test:
