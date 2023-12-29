@@ -36,7 +36,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_bs_ad_calendar: ^1.0.2
   another_carousel_pro: ^1.0.0
-  font_awesome_flutter: ^10.5.0
   readmore: ^2.2.0
   flutter_slidable: ^3.0.0
   image_picker: ^1.0.4
@@ -45,6 +44,7 @@ dependencies:
   google_nav_bar: ^5.0.6
   shared_preferences: ^2.2.2
   introduction_screen: ^3.1.12
+  font_awesome_flutter: ^10.6.0
 
 dev_dependencies:
   flutter_test:
@@ -70,7 +70,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - image/
-  #   - images/a_dot_ham.jpeg
+    - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

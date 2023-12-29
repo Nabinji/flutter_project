@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/On_Boarding/home_screen.dart';
-import 'package:my_project/On_Boarding/on_boarding_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:my_project/Navigation%20Drawer/nav_drawer.dart';
 
-bool isShow = true;
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  final pref = await SharedPreferences.getInstance();
-  isShow = pref.getBool('ON_BOARDING') ?? true;
+void main() {
   runApp(const MyApp());
 }
 
@@ -16,8 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: isShow ? const OnBoardingScreen() : const HomeScreen());
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyNavDrawer(),
+    );
   }
 }
