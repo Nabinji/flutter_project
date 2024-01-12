@@ -43,6 +43,7 @@ dependencies:
   lottie: ^2.7.0
   share_plus: ^7.2.1
   google_nav_bar: ^5.0.6
+  awesome_notifications: ^0.8.2
 
 dev_dependencies:
   flutter_test:
