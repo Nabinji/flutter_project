@@ -44,6 +44,8 @@ dependencies:
   share_plus: ^7.2.1
   google_nav_bar: ^5.0.6
   awesome_notifications: ^0.8.2
+  syncfusion_flutter_charts: ^24.1.46+1
+  pie_chart: ^5.4.0
 
 dev_dependencies:
   flutter_test:
